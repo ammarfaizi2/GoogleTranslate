@@ -217,7 +217,11 @@ final class GoogleTranslate
 	 */
 	private function isPerfectCache()
 	{
-		if (isset($this->cacheMap[$this->hash][0])) {
+		if (isset(
+				$this->cacheMap[$this->hash][0],
+				$this->cacheMap[$this->hash][1]
+			)
+		) {
 			$this->cacheMap[$this->hash][0] = (int) $this->cacheMap[$this->hash][0];
 			if (
 				$this->cacheMap[$this->hash][0] + 0x069780 > time() &&
@@ -234,6 +238,8 @@ final class GoogleTranslate
 
 	/**
 	 * Get cached data
+	 *
+	 * @return string
 	 */
 	private function getCache()
 	{
@@ -249,6 +255,8 @@ final class GoogleTranslate
 
 	/**
 	 * Generate key.
+	 *
+	 * @return string
 	 */
 	private static function generateKey()
 	{
@@ -261,6 +269,8 @@ final class GoogleTranslate
 
 	/**
 	 * Encrypt cache.
+	 *
+	 * @return string
 	 */
 	public static function crypt($data, $key)
 	{
@@ -287,7 +297,7 @@ final class GoogleTranslate
 		$this->cacheMap[$this->hash] = [time(), $key];
 		$handle = fopen($this->dataDir."/cache.map", "w");
 		fwrite($handle, json_encode($this->cacheMap));
-		fclose($handle);
+		return fclose($handle);
 	}
 
 	/**
