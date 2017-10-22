@@ -1,5 +1,11 @@
 # Google Translate
 
+Dapat di-install via composer :
+```
+composer require ammarfaizi2/googletranslate
+```
+
+
 Cara menggunakan :
 ```php
 <?php
