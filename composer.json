@@ -1,0 +1,12 @@
+{
+    "name": "ammarfaizi2/gtranslate",
+    "description": "Google Translate",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ammar Faizi",
+            "email": "ammarfaizi2@gmail.com"
+        }
+    ],
+    "require": {}
+}
