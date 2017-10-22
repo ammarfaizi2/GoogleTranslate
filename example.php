@@ -1,5 +1,7 @@
 <?php
 require "src/GoogleTranslate.php";
+// require "vendor/autoload.php"; // use composer
+
 use GoogleTranslate\GoogleTranslate;
 
 $text = "Apa kabar?";
