@@ -78,7 +78,10 @@ final class GoogleTranslate
 		}
 	}
 
-	private function translate()
+	/**
+	 * Translate.
+	 */
+	private function &translate()
 	{
 		$ch = curl_init("https://translate.google.com/m?hl=en&sl={$this->from}&tl={$this->to}&ie=UTF-8&prev=_m&q=".urlencode($this->text));
 		curl_setopt_array($ch, 
@@ -86,8 +89,10 @@ final class GoogleTranslate
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_SSL_VERIFYPEER => false,
 				CURLOPT_SSL_VERIFYHOST => false,
+				CURLOPT_CONNECTTIMEOUT => 30,
 				CURLOPT_COOKIEFILE => $this->cookiefile,
 				CURLOPT_COOKIEJAR => $this->cookiefile,
+				CURLOPT_TIMEOUT	=> 30
 			]
 		);
 		$out = curl_exec($ch);
@@ -97,12 +102,28 @@ final class GoogleTranslate
 	}
 
 	/**
+	 * Parse result.
+	 */
+	private static function parseResult($result)
+	{
+		$_result = "";
+		$segment = explode("<div dir=\"ltr\" class=\"t0\">", $result, 2);
+		if (isset($segment[1])) {
+			$segment = explode("<", $segment[1], 2);
+			$_result.= html_entity_decode($segment[0], ENT_QUOTES, 'UTF-8');
+		} else {
+			return "Error while parsing data!";
+		}
+		return $_result;
+	}
+
+	/**
 	 * Run translate and get result.
 	 *
 	 * @return string
 	 */
 	public function exec()
-	{
-		file_put_contents("a.tmp", $this->translate());
+	{		
+		return self::parseResult($this->translate());
 	}
 }
