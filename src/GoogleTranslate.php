@@ -175,7 +175,6 @@ final class GoogleTranslate
 			$out = curl_exec($ch);
 			$no = curl_errno($ch) and $out = "Error (".$no.") ".curl_error($ch) and $this->isError = true;
 			curl_close($ch);
-			file_put_contents("a.tmp", $out);
 			return $out;
 		}
 	}
