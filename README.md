@@ -1,6 +1,7 @@
 # Google Translate
 
-Dapat di-install via composer :
+
+Dapat diinstall via composer :
 ```
 composer require ammarfaizi2/googletranslate
 ```
