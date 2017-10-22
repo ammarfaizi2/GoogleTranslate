@@ -86,11 +86,19 @@ final class GoogleTranslate
 	 */
 	public function __construct($text, $from, $to)
 	{
-		$this->text = strtolower($text);
-		$this->from = strtolower($from);
-		$this->to   = $to;
-		$this->hash = sha1($this->text.$this->from.$this->to);
-		$this->__init__();
+		$from = strtolower($from);
+		$to   = strtolower($to);
+		if (
+			((isset(self::LANG_LIST[$from]) and $this->from = self::LANG_LIST[$from]) ||
+			($from === "auto" and $this->from = "auto")) && 
+			(isset(self::LANG_LIST[$to]) and $this->to = self::LANG_LIST[$to])
+		) {
+			$this->text = $text;
+			$this->hash = sha1($this->text.$this->from.$this->to);
+			$this->__init__();	
+		} else {
+			throw new \Exception("Language not found!", 1);
+		}
 	}
 
 	/**
@@ -313,4 +321,111 @@ final class GoogleTranslate
 				$this->isResultGetFromCache ? 
 					$out : $this->parseResult($out));
 	}
+
+	const LANG_LIST = [
+		"af" => "af",
+		"sq" => "sq",
+		"am" => "am",
+		"ar" => "ar",
+		"hy" => "hy",
+		"az" => "az",
+		"eu" => "eu",
+		"be" => "be",
+		"bn" => "bn",
+		"bs" => "bs",
+		"bg" => "bg",
+		"ca" => "ca",
+		"ceb" => "ceb",
+		"ny" => "ny",
+		"zh-cn" => "zh-CN",
+		"zh-tw" => "zh-TW",
+		"co" => "co",
+		"hr" => "hr",
+		"cs" => "cs",
+		"da" => "da",
+		"nl" => "nl",
+		"en" => "en",
+		"eo" => "eo",
+		"et" => "et",
+		"tl" => "tl",
+		"fi" => "fi",
+		"fr" => "fr",
+		"fy" => "fy",
+		"gl" => "gl",
+		"ka" => "ka",
+		"de" => "de",
+		"el" => "el",
+		"gu" => "gu",
+		"ht" => "ht",
+		"ha" => "ha",
+		"haw" => "haw",
+		"iw" => "iw",
+		"hi" => "hi",
+		"hmn" => "hmn",
+		"hu" => "hu",
+		"is" => "is",
+		"ig" => "ig",
+		"id" => "id",
+		"ga" => "ga",
+		"it" => "it",
+		"ja" => "ja",
+		"jw" => "jw",
+		"kn" => "kn",
+		"kk" => "kk",
+		"km" => "km",
+		"ko" => "ko",
+		"ku" => "ku",
+		"ky" => "ky",
+		"lo" => "lo",
+		"la" => "la",
+		"lv" => "lv",
+		"lt" => "lt",
+		"lb" => "lb",
+		"mk" => "mk",
+		"mg" => "mg",
+		"ms" => "ms",
+		"ml" => "ml",
+		"mt" => "mt",
+		"mi" => "mi",
+		"mr" => "mr",
+		"mn" => "mn",
+		"my" => "my",
+		"ne" => "ne",
+		"no" => "no",
+		"ps" => "ps",
+		"fa" => "fa",
+		"pl" => "pl",
+		"pt" => "pt",
+		"pa" => "pa",
+		"ro" => "ro",
+		"ru" => "ru",
+		"sm" => "sm",
+		"gd" => "gd",
+		"sr" => "sr",
+		"st" => "st",
+		"sn" => "sn",
+		"sd" => "sd",
+		"si" => "si",
+		"sk" => "sk",
+		"sl" => "sl",
+		"so" => "so",
+		"es" => "es",
+		"su" => "su",
+		"sw" => "sw",
+		"sv" => "sv",
+		"tg" => "tg",
+		"ta" => "ta",
+		"te" => "te",
+		"th" => "th",
+		"tr" => "tr",
+		"uk" => "uk",
+		"ur" => "ur",
+		"uz" => "uz",
+		"vi" => "vi",
+		"cy" => "cy",
+		"xh" => "xh",
+		"yi" => "yi",
+		"yo" => "yo",
+		"zu" => "zu",
+	];
 }
