@@ -4,7 +4,7 @@ use GoogleTranslate\GoogleTranslate;
 
 $text = "Apa kabar?";
 $from = "id";
-$to   = "en";
+$to   = "ja";
 
 $st = new GoogleTranslate($text, $from, $to);
 $result = $st->exec();

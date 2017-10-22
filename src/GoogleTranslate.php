@@ -128,6 +128,11 @@ final class GoogleTranslate
 		} else {
 			return "Error while parsing data!";
 		}
+		$segment = explode("<div dir=\"ltr\" class=\"o1\">", $result, 2);
+		if (count($segment) > 1) {
+			$segment = explode("<", $segment[1], 2);
+			$_result.= "\n(".html_entity_decode($segment[0], ENT_QUOTES, 2).")";
+		}
 		return $_result;
 	}
 
