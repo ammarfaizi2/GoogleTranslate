@@ -203,7 +203,7 @@ final class GoogleTranslate
 		$segment = explode("<div dir=\"ltr\" class=\"o1\">", $result, 2);
 		if ($isRomajiAvailable = count($segment) > 1) {
 			$segment = explode("<", $segment[1], 2);
-			$this->noRomanji or $_result.= "\n(".html_entity_decode($segment[0], ENT_QUOTES, 2).")";
+			$this->noRomanji or $_result.= "\n(".html_entity_decode($segment[0], ENT_QUOTES, 'UTF-8').")";
 		}
 		$this->result = [
 			"result" => $pure_result
