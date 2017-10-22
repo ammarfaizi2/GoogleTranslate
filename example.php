@@ -7,4 +7,7 @@ $from = "id";
 $to   = "en";
 
 $st = new GoogleTranslate($text, $from, $to);
-$st->exec();
+$result = $st->exec();
+
+echo $result;
+echo "\n";
