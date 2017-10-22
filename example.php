@@ -9,5 +9,5 @@ $to   = "en";
 $st = new GoogleTranslate($text, $from, $to);
 $result = $st->exec();
 
-echo $result;
+echo $result; // How are you?
 echo "\n";
