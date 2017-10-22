@@ -4,6 +4,8 @@ Cara menggunakan :
 ```php
 <?php
 require "src/GoogleTranslate.php";
+// require "vendor/autoload.php"; // use composer
+
 use GoogleTranslate\GoogleTranslate;
 
 // Contoh translate indonesia ke inggris
