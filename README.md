@@ -5,6 +5,7 @@ Cara menggunakan :
 <?php
 require "src/GoogleTranslate.php";
 use GoogleTranslate\GoogleTranslate;
+
 // Contoh translate indonesia ke inggris
 $text = "Apa kabar?";
 $from = "id"; // indonesia
