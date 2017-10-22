@@ -9,6 +9,7 @@ namespace GoogleTranslate;
  */
 final class GoogleTranslate
 {
+
 	/**
 	 * @var string
 	 */
@@ -33,6 +34,11 @@ final class GoogleTranslate
 	 * @var string
 	 */
 	private $cookiefile;
+
+	/**
+	 * @var bool
+	 */
+	private $isError = false;
 
 	/**
 	 * Constructor.
@@ -90,14 +96,22 @@ final class GoogleTranslate
 				CURLOPT_SSL_VERIFYPEER => false,
 				CURLOPT_SSL_VERIFYHOST => false,
 				CURLOPT_CONNECTTIMEOUT => 30,
+				CURLOPT_HTTPHEADER => [
+					"Host: translate.google.com",
+					"User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:56.0) Gecko/20100101 Firefox/56.0",
+					"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+					"Accept-Language: en-US,en;q=0.5"
+				],
 				CURLOPT_COOKIEFILE => $this->cookiefile,
 				CURLOPT_COOKIEJAR => $this->cookiefile,
+				CURLOPT_REFERER => "https://translate.google.com/m",
 				CURLOPT_TIMEOUT	=> 30
 			]
 		);
 		$out = curl_exec($ch);
-		$no = curl_errno($ch) and $out = "Error (".$no.") ".curl_error($ch);
+		$no = curl_errno($ch) and $out = "Error (".$no.") ".curl_error($ch) and $this->isError = true;
 		curl_close($ch);
+		file_put_contents("a.tmp", $out);
 		return $out;
 	}
 
@@ -123,7 +137,8 @@ final class GoogleTranslate
 	 * @return string
 	 */
 	public function exec()
-	{		
-		return self::parseResult($this->translate());
+	{	
+		$out = $this->translate();
+		return $this->isError ? $out : self::parseResult($out);
 	}
 }
