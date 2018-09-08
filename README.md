@@ -11,7 +11,7 @@ composer require ammarfaizi2/googletranslate
 ```php
 <?php
 require "src/GoogleTranslate.php";
-// require "vendor/autoload.php"; // use composer
+// require "vendor/autoload.php"; // when using composer
 
 use GoogleTranslate\GoogleTranslate;
 
