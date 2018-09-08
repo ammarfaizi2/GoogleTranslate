@@ -198,9 +198,20 @@ final class GoogleTranslate
 			$segment = explode("<", $segment[1], 2);
 			$pure_result = $_result.= html_entity_decode($segment[0], ENT_QUOTES, 'UTF-8');
 		} else {
-			return "Error while parsing data!";
+			$segment = explode("<div dir=\"rtl\" class=\"t0\">", $result, 2);
+			if (isset($segment[1])) {
+				$segment = explode("<", $segment[1], 2);
+				$pure_result = $_result.= html_entity_decode($segment[0], ENT_QUOTES, 'UTF-8');
+			} else {
+				return "Error while parsing data!";
+			}
 		}
 		$segment = explode("<div dir=\"ltr\" class=\"o1\">", $result, 2);
+		if ($isRomajiAvailable = count($segment) > 1) {
+			$segment = explode("<", $segment[1], 2);
+			$this->noRomanji or $_result.= "\n(".html_entity_decode($segment[0], ENT_QUOTES, 'UTF-8').")";
+		}
+		$segment = explode("<div dir=\"rtl\" class=\"o1\">", $result, 2);
 		if ($isRomajiAvailable = count($segment) > 1) {
 			$segment = explode("<", $segment[1], 2);
 			$this->noRomanji or $_result.= "\n(".html_entity_decode($segment[0], ENT_QUOTES, 'UTF-8').")";
