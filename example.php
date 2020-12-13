@@ -4,8 +4,8 @@ require "src/GoogleTranslate.php";
 
 use GoogleTranslate\GoogleTranslate;
 
-$text = "Apa kabar?";
-$from = "id";
+$text = "Apa kabar kalian semua di sini?";
+$from = "auto";
 $to   = "en";
 
 $st = new GoogleTranslate($text, $from, $to);
