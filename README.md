@@ -28,4 +28,116 @@ echo $result; // How are you?
 
 
 Available Languages:
-af = Afrikaans<br>sq = Albanian<br>am = Amharic<br>ar = Arabic<br>hy = Armenian<br>az = Azerbaijani<br>eu = Basque<br>be = Belarusian<br>bn = Bengali<br>bs = Bosnian<br>bg = Bulgarian<br>ca = Catalan<br>ceb = Cebuano<br>ny = Chichewa<br>zh-CN = Chinese (Simplified)<br>zh-TW = Chinese (Traditional)<br>co = Corsican<br>hr = Croatian<br>cs = Czech<br>da = Danish<br>nl = Dutch<br>en = English<br>eo = Esperanto<br>et = Estonian<br>tl = Filipino<br>fi = Finnish<br>fr = French<br>fy = Frisian<br>gl = Galician<br>ka = Georgian<br>de = German<br>el = Greek<br>gu = Gujarati<br>ht = Haitian Creole<br>ha = Hausa<br>haw = Hawaiian<br>iw = Hebrew<br>hi = Hindi<br>hmn = Hmong<br>hu = Hungarian<br>is = Icelandic<br>ig = Igbo<br>id = Indonesian<br>ga = Irish<br>it = Italian<br>ja = Japanese<br>jw = Javanese<br>kn = Kannada<br>kk = Kazakh<br>km = Khmer<br>ko = Korean<br>ku = Kurdish (Kurmanji)<br>ky = Kyrgyz<br>lo = Lao<br>la = Latin<br>lv = Latvian<br>lt = Lithuanian<br>lb = Luxembourgish<br>mk = Macedonian<br>mg = Malagasy<br>ms = Malay<br>ml = Malayalam<br>mt = Maltese<br>mi = Maori<br>mr = Marathi<br>mn = Mongolian<br>my = Myanmar (Burmese)<br>ne = Nepali<br>no = Norwegian<br>ps = Pashto<br>fa = Persian<br>pl = Polish<br>pt = Portuguese<br>pa = Punjabi<br>ro = Romanian<br>ru = Russian<br>sm = Samoan<br>gd = Scots Gaelic<br>sr = Serbian<br>st = Sesotho<br>sn = Shona<br>sd = Sindhi<br>si = Sinhala<br>sk = Slovak<br>sl = Slovenian<br>so = Somali<br>es = Spanish<br>su = Sundanese<br>sw = Swahili<br>sv = Swedish<br>tg = Tajik<br>ta = Tamil<br>te = Telugu<br>th = Thai<br>tr = Turkish<br>uk = Ukrainian<br>ur = Urdu<br>uz = Uzbek<br>vi = Vietnamese<br>cy = Welsh<br>xh = Xhosa<br>yi = Yiddish<br>yo = Yoruba<br>zu = Zulu<br>
+| Code        | Description |
+| ----------- | ----------- |
+ | en | English |
+ | ja | Japanese |
+ | id | Indonesian |
+ | af | Afrikaans |
+ | sq | Albanian |
+ | am | Amharic |
+ | ar | Arabic |
+ | hy | Armenian |
+ | az | Azerbaijani |
+ | eu | Basque |
+ | be | Belarusian |
+ | bn | Bengali |
+ | bs | Bosnian |
+ | bg | Bulgarian |
+ | ca | Catalan |
+ | ce | Cebuano |
+ | ny | Chichewa |
+ | zh | Chinese |
+ | co | Corsican |
+ | hr | Croatian |
+ | cs | Czech |
+ | da | Danish |
+ | nl | Dutch |
+ | en | English |
+ | eo | Esperanto |
+ | et | Estonian |
+ | tl | Filipino |
+ | fi | Finnish |
+ | fr | French |
+ | fy | Frisian |
+ | gl | Galician |
+ | ka | Georgian |
+ | de | German |
+ | el | Greek |
+ | gu | Gujarati |
+ | ht | Haitian Creole |
+ | ha | Hausa |
+ | ha | Hawaiian |
+ | iw | Hebrew |
+ | hi | Hindi |
+ | hm | Hmong |
+ | hu | Hungarian |
+ | is | Icelandic |
+ | ig | Igbo |
+ | id | Indonesian |
+ | ga | Irish |
+ | it | Italian |
+ | ja | Japanese |
+ | jw | Javanese |
+ | kn | Kannada |
+ | kk | Kazakh |
+ | km | Khmer |
+ | rw | Kinyarwanda |
+ | ko | Korean |
+ | ku | Kurdish (Kurmanji) |
+ | ky | Kyrgyz |
+ | lo | Lao |
+ | la | Latin |
+ | lv | Latvian |
+ | lt | Lithuanian |
+ | lb | Luxembourgish |
+ | mk | Macedonian |
+ | mg | Malagasy |
+ | ms | Malay |
+ | ml | Malayalam |
+ | mt | Maltese |
+ | mi | Maori |
+ | mr | Marathi |
+ | mn | Mongolian |
+ | my | Myanmar (Burmese) |
+ | ne | Nepali |
+ | no | Norwegian |
+ | or | Odia (Oriya) |
+ | ps | Pashto |
+ | fa | Persian |
+ | pl | Polish |
+ | pt | Portuguese |
+ | pa | Punjabi |
+ | ro | Romanian |
+ | ru | Russian |
+ | sm | Samoan |
+ | gd | Scots Gaelic |
+ | sr | Serbian |
+ | st | Sesotho |
+ | sn | Shona |
+ | sd | Sindhi |
+ | si | Sinhala |
+ | sk | Slovak |
+ | sl | Slovenian |
+ | so | Somali |
+ | es | Spanish |
+ | su | Sundanese |
+ | sw | Swahili |
+ | sv | Swedish |
+ | tg | Tajik |
+ | ta | Tamil |
+ | tt | Tatar |
+ | te | Telugu |
+ | th | Thai |
+ | tr | Turkish |
+ | tk | Turkmen |
+ | uk | Ukrainian |
+ | ur | Urdu |
+ | ug | Uyghur |
+ | uz | Uzbek |
+ | vi | Vietnamese |
+ | cy | Welsh |
+ | xh | Xhosa |
+ | yi | Yiddish |
+ | yo | Yoruba |
+ | zu | Zulu |
